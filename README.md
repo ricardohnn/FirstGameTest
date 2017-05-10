@@ -13,15 +13,15 @@ Since the tutorial is already explained and detailed, I will only cover some bas
 Let´s begin with the downloads needed to start everything.
 - Android IDE
 
-https://developer.android.com/studio/install.html
+  https://developer.android.com/studio/install.html
 
-Make sure you also download the SDK and configure the AVD manager (since genymotion is paid now... shame on you genymotion).
+  Make sure you also download the SDK and configure the AVD manager (since genymotion is paid now... shame on you genymotion).
 
 - Git (for windows)
 
-https://git-scm.com/download/win
+  https://git-scm.com/download/win
 
-Yes, for windows...
+  Yes, for windows...
 
 This will be enough for you to run and test the application.
 
@@ -53,3 +53,14 @@ One thing that must be remembered:
 If the activity is restarted, then we should not forget to handle it.
 
 ### Building the game view
+For the gameview class, we have some interesting information, let's check some of those.
+First, it inherits SurfaceView, which is basically a drawing surface in a view.
+
+https://developer.android.com/reference/android/view/SurfaceView.html
+
+Second, it implements the runnable interface, as the purpose of the surfaceview is to be rendered from a secondary thread (meaning, not the main thread).
+There are 2 ways to create a new thread, one is by implementing the runnable interface and passing the class instance as an argument when creating the thread, the other way is by subclassing thread.
+Both examples can be seen in here:
+
+https://developer.android.com/reference/java/lang/Thread.html
+https://developer.android.com/reference/java/lang/Runnable.html
